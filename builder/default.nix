@@ -176,6 +176,12 @@ let
       };
 
     in
+
+    builtins.trace "hello1";
+    builtins.trace goMod.go;
+    builtins.trace "hello2";
+    builtins.trace attrs.go;
+
     stdenv.mkDerivation (removeAttrs attrs [ "pwd" ] // {
       name = "${baseNameOf goMod.module}-env";
 
